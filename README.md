@@ -1,16 +1,27 @@
-### Hi there 👋
+```java
+package bank;
 
-<!--
-**respect0/respect0** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+import java.util.Scanner;
+import database.getmoney;
 
-Here are some ideas to get you started:
+public class bank() {
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+private String email;
+
+  public void oldBank(Bank bank) {
+    Scanner scanner = new Scanner(System.in);
+    Thread.sleep(1000);
+    try {
+      System.out.println("Email gir"); 
+      email = scanner.next();
+      Database db = new Database(email);
+      System.out.println("Paranız : " + Integer.valueOf(db.getmoney));
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+      System.out.println(e.getErrorCode());
+    } finally {
+      db.close();
+    }
+  }
+}
+```
